@@ -1,14 +1,74 @@
-﻿<!DOCTYPE html>
+@{
+
+    string version = typeof(TestA4.RouteConfig).Assembly.GetName().Version.ToString();
+    string webApiEndPoint = System.Configuration.ConfigurationManager.AppSettings["WebApiEndPoint"].ToString();
+
+    string currentRoute = "/";
+
+    foreach (string key in HttpContext.Current.Request.QueryString.AllKeys)
+    {
+		if (key == "CurrentRoute")
+		{
+			currentRoute = HttpContext.Current.Request.QueryString[key];
+			break;
+		}
+    }
+
+    string runMode = TestA4.Properties.Settings.Default.RunMode;
+
+    IEnumerable<string> fileEntries = Enumerable.Empty<string>();
+    List<string> bundles = new List<string>();
+
+
+    if (runMode == "WEBAPI")
+    {
+		Response.Write("running web api mode");
+    }
+    else
+    {
+		fileEntries = Directory.EnumerateFiles(Server.MapPath("~/Themes/dist"));
+
+		bundles.Add("inline.");
+		bundles.Add("polyfills");
+		bundles.Add("styles.");
+		bundles.Add("vendor.");
+		bundles.Add("main.");
+    }
+
+}
+
+
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+    <!-- @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr") -->
+    <link rel="icon" type="image/x-icon" href="~/Themes/dist/favicon.ico">
+
+    @if (HttpContext.Current.IsDebuggingEnabled)
+    {
+        <base href="/">
+    }
+    else
+    {
+        <base href="http://localhost/TestA4/">
+    }
+
+    <script>
+        history.pushState({}, null, "@currentRoute");
+        console.log("Version: ", @version);
+        console.log("webApiEndPoint: ", @webApiEndPoint);
+        console.log("currentRoute: ", @currentRoute);
+        console.log("runMode: ", @runMode);
+    </script>
+
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <!-- <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -25,17 +85,59 @@
                 </ul>
             </div>
         </div>
-    </div>
+    </div> -->
     <div class="container body-content">
         @RenderBody()
-        <hr />
+
+        @if (runMode == "WEBAPI")
+        {
+            return;
+        }
+
+        <app-root imagesDirectory="Themes/dist" webApiEndPoint="@webApiEndPoint">Loading @version</app-root>
+
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+
+        @if (HttpContext.Current.IsDebuggingEnabled)
+        {
+            <script src="~/Themes/dist/inline.bundle.js?v=@version"></script>
+            <script src="~/Themes/dist/polyfills.bundle.js?v=@version"></script>
+            <script src="~/Themes/dist/styles.bundle.js?v=@version"></script>
+            <script src="~/Themes/dist/vendor.bundle.js?v=@version"></script>
+            <script src="~/Themes/dist/main.bundle.js?v=@version"></script>
+        }
+        else
+        {
+            foreach (string bundleName in bundles)
+            {
+                <p>@bundleName</p>
+                foreach (string fileName in fileEntries)
+                {
+                    <p>@fileName</p>
+                    FileInfo fileInformation = new FileInfo(fileName);
+                    if (fileInformation.Name.Contains(bundleName) && fileInformation.Name.Contains(".map") == false)
+                    {
+
+                        if (fileInformation.Name.Contains("styles"))
+                        {
+                            <link href="~/Themes/dist/@fileInformation.Name" rel="stylesheet" />
+                        }
+                        else
+                        {
+                            <script src="~/Themes/dist/@fileInformation.Name"></script>
+                        }
+                    }
+                }
+            }
+        }
+
         <footer>
             <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
         </footer>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
+    <!-- @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    @RenderSection("scripts", required: false) -->
 </body>
 </html>

@@ -61,8 +61,11 @@ C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\Microsoft.Appli
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\Newtonsoft.Json.dll
+C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\Orleans.Serialization.Newtonsoft.Json.dll
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\System.Net.Http.Formatting.dll
+C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\System.Web.Cors.dll
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\System.Web.Helpers.dll
+C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\System.Web.Http.Cors.dll
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\System.Web.Http.dll
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\System.Web.Http.WebHost.dll
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\System.Web.Mvc.dll
@@ -73,6 +76,7 @@ C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\System.Web.WebP
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\System.Web.WebPages.Razor.dll
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\WebGrease.dll
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\System.Web.Http.Cors.xml
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\Newtonsoft.Json.xml
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\System.Net.Http.Formatting.xml
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\System.Web.Helpers.xml
@@ -90,6 +94,7 @@ C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\Microsoft.AI.De
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\Microsoft.AI.ServerTelemetryChannel.xml
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\Microsoft.AI.WindowsServer.xml
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\bin\Microsoft.AI.Web.xml
+C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\obj\Debug\TestA4.csprojResolveAssemblyReference.cache
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\obj\Debug\TestA4.csproj.CoreCompileInputs.cache
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\obj\Debug\TestA4.dll
 C:\Users\Anubis\VsPj\FundationPj_Practice\TestA4_Solu\TestA4\obj\Debug\TestA4.pdb
