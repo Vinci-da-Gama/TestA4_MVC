@@ -211,13 +211,6 @@
     <Content Include="Areas\HelpPage\HelpPage.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Themes\dist\favicon.ico" />
-    <Content Include="Themes\dist\index.html" />
-    <Content Include="Themes\dist\inline.bundle.js" />
-    <Content Include="Themes\dist\main.bundle.js" />
-    <Content Include="Themes\dist\polyfills.bundle.js" />
-    <Content Include="Themes\dist\styles.bundle.js" />
-    <Content Include="Themes\dist\vendor.bundle.js" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -253,11 +246,6 @@
     <Content Include="package-lock.json" />
     <Content Include="package.json" />
     <Content Include="README.md" />
-    <Content Include="Themes\dist\inline.bundle.js.map" />
-    <Content Include="Themes\dist\main.bundle.js.map" />
-    <Content Include="Themes\dist\polyfills.bundle.js.map" />
-    <Content Include="Themes\dist\styles.bundle.js.map" />
-    <Content Include="Themes\dist\vendor.bundle.js.map" />
     <None Include="Properties\Settings.settings">
       <Generator>PublicSettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -299,6 +287,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Themes\dist\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
